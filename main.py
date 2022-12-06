@@ -5,12 +5,36 @@ from tkinter import ttk
 import datetime
 import calendar
 
-class tasks:
-    def __init__(self):
-        pass
+class Tasks:
+    
+    def __init__(self, name, due_date, description):
+        super().__init__()
         
-    def __str__(self):
-        pass
+        self.name = name
+        self.due_date = due_date
+        self.description = description
+        
+        self.create_task(name, due_date, description)
+        
+    
+    def labels_tasks(self):
+        # Tasks Section Label
+        tasks_section_label = ttk.Label(self, text = "Tasks")
+        tasks_section_label.grid(column=0, row=7, sticky=tk.W, padx=20, pady=20)
+        
+    def list_of_tasks(self, task):
+        task_list = []
+        number_of_tasks = len(task_list)
+    
+    def create_task(self, name, due_date, description, number_of_tasks):
+        
+        #task name
+        task_name = ttk.Label(self, text = name)
+        task_name.grid(column=0, row=number_of_tasks+6, sticky=tk.W, padx=0, pady=0)
+        
+        #task due date
+        task_due_date = ttk.Label(self, text = name)
+        task_due_date.grid(column=1, row=number_of_tasks+6, sticky=tk.W, padx=0, pady=0)
 class Month:
     def __init__(self, month_num):
         self.month_num = month_num
@@ -58,6 +82,9 @@ class App(tk.Tk):
         self.labels_days(current_year, current_month)
         self.labels_year(current_year)
         self.month_button()
+        
+        #Tasks
+        self.show_task_list()
     
     def labels_month(self, which_month):
         
@@ -146,8 +173,8 @@ class App(tk.Tk):
         self.labels_year(update_year)
         
         
-    def show_task_list(self):
-        pass
+    def show_task_list(self, name, due_date, description):
+        self.to_do_task = Tasks(name, due_date, description)
       
 #    self.button['command'] = self.button_clicked
  #   self.button.pack()
