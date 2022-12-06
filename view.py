@@ -71,4 +71,4 @@ class View(ttk.Frame):
         Hide the message
         :return:
         """
-        self.message_label['text'] = ''
+        self.message_label['text'] = ''     

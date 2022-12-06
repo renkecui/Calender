@@ -1,10 +1,11 @@
-from model import Model
-from view import View
+
 class Controller:
     def __init__(self, model, view):
         self.model = model
         self.view = view
+        
 
+'''
     def save(self, email):
         """
         Save the email
@@ -22,4 +23,5 @@ class Controller:
 
         except ValueError as error:
             # show an error message
-            self.view.show_error(error)
+            self.view.show_error(error)        
+'''

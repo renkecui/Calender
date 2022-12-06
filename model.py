@@ -1,4 +1,5 @@
 import re
+
 class Model:
     def __init__(self, email):
         self.email = email
@@ -14,7 +15,7 @@ class Model:
         :param value:
         :return:
         """
-        pattern = f'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+        pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
         if re.fullmatch(pattern, value):
             self.__email = value
         else:

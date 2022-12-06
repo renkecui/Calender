@@ -1,9 +1,7 @@
-import calendar
 import tkinter as tk
-from tkinter import ttk
-from model import Model
-from view import View
 from controller import Controller
+from view import View
+from model import Model
 
 class features:
     WEEKDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
@@ -26,19 +24,14 @@ class features:
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
-
-        self.title('Tkinter MVC Demo')
-
+        self.title('Calendar')
         # create a model
         model = Model('hello@pythontutorial.net')
-
         # create a view and place it on the root window
         view = View(self)
-        view.grid(row=0, column=0, padx=10, pady=10)
-
+        view.grid(row=100, column=100, padx=10, pady=10)
         # create a controller
         controller = Controller(model, view)
-
         # set the controller to view
         view.set_controller(controller)
 

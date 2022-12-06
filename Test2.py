@@ -1,5 +1,6 @@
 import calendar
 
+
 # Print a calendar
 #print(calendar.calendar(2022, w=4, l=2))
 
@@ -25,40 +26,11 @@ import calendar
 # print(calendar.weekday(1988, 10, 9))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-print (calendar.calendar(2021, w=2,l=1))
+#print (calendar.calendar(2021, w=2,l=1))
 #print(calendar.isleap(2021))
 #print(calendar.leapdays(1984,2021))
-#print(calendar.month(2021, 10))
-#print(calendar.monthcalendar(2021,10))
+print(calendar.month(2022, 12))
+print(calendar.monthcalendar(2022,12))
 #print(calendar.firstweekday())
 #print(calendar.monthrange(2021,8))
 #print(calendar.weekday(1984,1,10))

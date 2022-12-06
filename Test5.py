@@ -3,6 +3,7 @@ from tkinter import ttk
 import datetime
 import calendar
 
+
 class Month:
     def __init__(self, month_num):
         self.month_num = month_num
@@ -21,7 +22,7 @@ class Month:
               'December']
         return months[self.month_num-1]
     
-class App(tk.Tk):#, Month):
+class App(tk.Tk):
 
     def __init__(self, height, width):
         super().__init__()
@@ -95,6 +96,8 @@ class App(tk.Tk):#, Month):
         # next month button
         next_month_button = ttk.Button(self, text=">")
         next_month_button.grid(column=4, row=0, sticky=tk.E, padx=0, pady=0)
+    def buttons(self):
+        pass
 #    self.button['command'] = self.button_clicked
  #   self.button.pack()
 
@@ -105,7 +108,7 @@ class App(tk.Tk):#, Month):
 if __name__ == "__main__":
     app = App(1000,700)
     app.mainloop()
-    
+
 
 '''
         # Days of the week
