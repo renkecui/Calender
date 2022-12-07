@@ -4,8 +4,8 @@ import tkinter as tk
 from tkinter import ttk
 import datetime
 import calendar
-
-class Tasks:
+'''
+class Tasks(tk.Tk):
     
     def __init__(self, name, due_date, description):
         super().__init__()
@@ -14,27 +14,39 @@ class Tasks:
         self.due_date = due_date
         self.description = description
         
+        # create task
         self.create_task(name, due_date, description)
-        
+        self.label_task()        
     
     def labels_tasks(self):
-        # Tasks Section Label
-        tasks_section_label = ttk.Label(self, text = "Tasks")
-        tasks_section_label.grid(column=0, row=7, sticky=tk.W, padx=20, pady=20)
+        # Tasks Name Label
+        tasks_name_label = ttk.Label(self, text = "Name")
+        tasks_name_label.grid(column=0, row=7, sticky=tk.W, padx=20, pady=20)
+        # Tasks due_date Label
+        tasks_due_date_label = ttk.Label(self, text = "Due Date")
+        tasks_due_date_label.grid(column=0, row=7, sticky=tk.W, padx=20, pady=20)
+        # Tasks description Label
+        tasks_description_label = ttk.Label(self, text = "Description")
+        tasks_description_label.grid(column=0, row=7, sticky=tk.W, padx=20, pady=20)
         
     def list_of_tasks(self, task):
         task_list = []
         number_of_tasks = len(task_list)
     
-    def create_task(self, name, due_date, description, number_of_tasks):
+    def create_task(self, name, due_date, description):
         
         #task name
         task_name = ttk.Label(self, text = name)
-        task_name.grid(column=0, row=number_of_tasks+6, sticky=tk.W, padx=0, pady=0)
+        task_name.grid(column=0, row=7, sticky=tk.W, padx=0, pady=0)
         
         #task due date
-        task_due_date = ttk.Label(self, text = name)
-        task_due_date.grid(column=1, row=number_of_tasks+6, sticky=tk.W, padx=0, pady=0)
+        task_due_date = ttk.Label(self, text = due_date)
+        task_due_date.grid(column=1, row=7, sticky=tk.W, padx=0, pady=0)
+        
+        #task description
+        task_description = ttk.Label(self, text = description)
+        task_description.grid(column=1, row=7, sticky=tk.W, padx=0, pady=0)
+'''
 class Month:
     def __init__(self, month_num):
         self.month_num = month_num
@@ -83,8 +95,11 @@ class App(tk.Tk):
         self.labels_year(current_year)
         self.month_button()
         
+        #task 
+        self.labels_tasks()
+        
         #Tasks
-        self.show_task_list()
+        #self.show_task_list('Homwork 1', '12/12/2022', 'HomeWork')
     
     def labels_month(self, which_month):
         
@@ -152,12 +167,15 @@ class App(tk.Tk):
         if  current_month == 12:
             update_year = update_year + 1
             update_month = 1
+            self.labels_days(update_year, update_month)
+            self.labels_month(update_month)
+            self.labels_year(update_year)
         else:
             update_year = current_year
             update_month = update_month + 1
-        self.labels_days(update_year, update_month)
-        self.labels_month(update_month)
-        self.labels_year(update_year)
+            self.labels_days(update_year, update_month)
+            self.labels_month(update_month)
+            self.labels_year(update_year)
         
     def buttons_previous_month(self):
         update_month = current_month
@@ -165,17 +183,55 @@ class App(tk.Tk):
         if  current_month == 1:
             update_year = update_year - 1
             update_month = 12
+            self.labels_days(update_year, update_month)
+            self.labels_month(update_month)
+            self.labels_year(update_year)
         else:
             update_year = current_year
             update_month = update_month - 1
-        self.labels_days(update_year, update_month)
-        self.labels_month(update_month)
-        self.labels_year(update_year)
+            self.labels_days(update_year, update_month)
+            self.labels_month(update_month)
+            self.labels_year(update_year)
         
         
-    def show_task_list(self, name, due_date, description):
-        self.to_do_task = Tasks(name, due_date, description)
-      
+       
+    # Tasks     
+    def labels_tasks(self):
+        # Tasks  Label
+        tasks_label = ttk.Label(self, text = "Tasks")
+        tasks_label.grid(column=0, row=9, sticky=tk.W, padx=20, pady=20)
+        # Tasks Name Label
+        tasks_name_label = ttk.Label(self, text = "Name")
+        tasks_name_label.grid(column=1, row=9, sticky=tk.W, padx=20, pady=20)
+        # Tasks due_date Label
+        tasks_due_date_label = ttk.Label(self, text = "Due Date")
+        tasks_due_date_label.grid(column=2, row=9, sticky=tk.W, padx=20, pady=20)
+        # Tasks description Label
+        tasks_description_label = ttk.Label(self, text = "Description")
+        tasks_description_label.grid(column=3, row=9, sticky=tk.W, padx=20, pady=20)
+    
+    def enter_new_task(self):
+        pass
+    
+    def create_task(self, name, due_date, description):
+        
+        #task name
+        task_name = ttk.Label(self, text = name)
+        task_name.grid(column=0, row=7, sticky=tk.W, padx=0, pady=0)
+        
+        #task due date
+        task_due_date = ttk.Label(self, text = due_date)
+        task_due_date.grid(column=1, row=7, sticky=tk.W, padx=0, pady=0)
+        
+        #task description
+        task_description = ttk.Label(self, text = description)
+        task_description.grid(column=1, row=7, sticky=tk.W, padx=0, pady=0)
+    '''
+    def list_of_tasks(self, task):
+        task_list = []
+        number_of_tasks = len(task_list)
+
+        '''
 #    self.button['command'] = self.button_clicked
  #   self.button.pack()
 
