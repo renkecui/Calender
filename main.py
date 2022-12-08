@@ -7,49 +7,7 @@ import calendar
 from tkinter.messagebox import showinfo
 from tkinter.messagebox import showerror
 
-'''
-class Tasks(tk.Tk):
-    
-    def __init__(self, name, due_date, description):
-        super().__init__()
-        
-        self.name = name
-        self.due_date = due_date
-        self.description = description
-        
-        # create task
-        self.create_task(name, due_date, description)
-        self.label_task()        
-    
-    def labels_tasks(self):
-        # Tasks Name Label
-        tasks_name_label = ttk.Label(self, text = "Name")
-        tasks_name_label.grid(column=0, row=7, sticky=tk.W, padx=20, pady=20)
-        # Tasks due_date Label
-        tasks_due_date_label = ttk.Label(self, text = "Due Date")
-        tasks_due_date_label.grid(column=0, row=7, sticky=tk.W, padx=20, pady=20)
-        # Tasks description Label
-        tasks_description_label = ttk.Label(self, text = "Description")
-        tasks_description_label.grid(column=0, row=7, sticky=tk.W, padx=20, pady=20)
-        
-    def list_of_tasks(self, task):
-        task_list = []
-        number_of_tasks = len(task_list)
-    
-    def create_task(self, name, due_date, description):
-        
-        #task name
-        task_name = ttk.Label(self, text = name)
-        task_name.grid(column=0, row=7, sticky=tk.W, padx=0, pady=0)
-        
-        #task due date
-        task_due_date = ttk.Label(self, text = due_date)
-        task_due_date.grid(column=1, row=7, sticky=tk.W, padx=0, pady=0)
-        
-        #task description
-        task_description = ttk.Label(self, text = description)
-        task_description.grid(column=1, row=7, sticky=tk.W, padx=0, pady=0)
-'''
+
 class Month:
     def __init__(self, month_num):
         self.month_num = month_num
@@ -126,7 +84,7 @@ class App(tk.Tk):
         # Weekdays
         # Monday
         monday_label = ttk.Label(self, text = "Mon")
-        monday_label.grid(column=0, row=1, sticky=tk.W, padx=0, pady=0)
+        monday_label.grid(column=0, row=1, sticky=tk.W, padx=10, pady=0)
         # Tuesday
         tuesday_label = ttk.Label(self, text = "Tue")
         tuesday_label.grid(column=1, row=1, sticky=tk.W, padx=0, pady=0)
@@ -213,46 +171,12 @@ class App(tk.Tk):
  
     def task_check_marks(self):
         tasks_done = ttk.Label(self, text = "Completed?")
-        tasks_done.grid(column=0, row=9, sticky=tk.W, padx=0, pady=10)
-        tasks_done_spacer = ttk.Label(self, text = "_")
-        tasks_done_spacer.grid(column=0, row=10, sticky=tk.W, padx=0, pady=10)
-        '''
-        agreement = tk.StringVar()
-        agreement_changed = tk.messagebox.showinfo(title='Result',
-                                message=agreement.get()) '''
-       
-        '''
-                        command=agreement_changed,
-                        variable=agreement,
-                        onvalue='Task Completed',
-                        offvalue='Task Incompolete')
-        '''
-        '''
-        checkbox1 = ttk.Checkbutton(self)
-        checkbox2 = ttk.Checkbutton(self)
-        checkbox3 = ttk.Checkbutton(self)
-        checkbox4 = ttk.Checkbutton(self)
-        checkbox5 = ttk.Checkbutton(self)
-        checkbox6 = ttk.Checkbutton(self)
-        checkbox7 = ttk.Checkbutton(self)
-        checkbox8 = ttk.Checkbutton(self)
-        checkbox9 = ttk.Checkbutton(self)
-        checkbox10 = ttk.Checkbutton(self)
-        
-        checkbox1.grid(column=0, row=10, sticky=tk.W, padx=0, pady=0)
-        checkbox2.grid(column=0, row=11, sticky=tk.W, padx=0, pady=0)
-        checkbox3.grid(column=0, row=12, sticky=tk.W, padx=0, pady=0)
-        checkbox4.grid(column=0, row=13, sticky=tk.W, padx=0, pady=0)
-        checkbox5.grid(column=0, row=14, sticky=tk.W, padx=0, pady=0)
-        checkbox6.grid(column=0, row=15, sticky=tk.W, padx=0, pady=0)
-        checkbox7.grid(column=0, row=16, sticky=tk.W, padx=0, pady=0)
-        checkbox8.grid(column=0, row=17, sticky=tk.W, padx=0, pady=0)
-        checkbox9.grid(column=0, row=18, sticky=tk.W, padx=0, pady=0)
-        checkbox10.grid(column=0, row=19, sticky=tk.W, padx=0, pady=0)
-        '''
-        
+        tasks_done.grid(column=0, row=9, sticky=tk.W, padx=10, pady=10)
+        tasks_done_spacer = ttk.Label(self, text = "  --")
+        tasks_done_spacer.grid(column=0, row=10, sticky=tk.W, padx=10, pady=10)
+
     def labels_tasks(self):
-        tasks_number_spacer = ttk.Label(self, text = "_")
+        tasks_number_spacer = ttk.Label(self, text = "  --")
         tasks_number_spacer.grid(column=1, row=10, sticky=tk.W, padx=0, pady=10)
         # Tasks  Label
         tasks_label = ttk.Label(self, text = "Tasks")
@@ -266,29 +190,7 @@ class App(tk.Tk):
         # Tasks description Label
         tasks_description_label = ttk.Label(self, text = "Description")
         tasks_description_label.grid(column=4, row=9, sticky=tk.W, padx=0, pady=10)
-    '''
-    def task_number(self):
-        task1 = ttk.Label(self, text = "1")
-        task1.grid(column=1, row=10, sticky=tk.W, padx=0, pady=0)
-        task2 = ttk.Label(self, text = "2")
-        task2.grid(column=1, row=11, sticky=tk.W, padx=0, pady=0)
-        task3 = ttk.Label(self, text = "3")
-        task3.grid(column=1, row=12, sticky=tk.W, padx=0, pady=0)
-        task4 = ttk.Label(self, text = "4")
-        task4.grid(column=1, row=13, sticky=tk.W, padx=0, pady=0)
-        task5 = ttk.Label(self, text = "5")
-        task5.grid(column=1, row=14, sticky=tk.W, padx=0, pady=0)
-        task6 = ttk.Label(self, text = "6")
-        task6.grid(column=1, row=15, sticky=tk.W, padx=0, pady=0)
-        task7 = ttk.Label(self, text = "7")
-        task7.grid(column=1, row=16, sticky=tk.W, padx=0, pady=0)
-        task8 = ttk.Label(self, text = "8")
-        task8.grid(column=1, row=17, sticky=tk.W, padx=0, pady=0)
-        task9 = ttk.Label(self, text = "9")
-        task9.grid(column=1, row=18, sticky=tk.W, padx=0, pady=0)
-        task10 = ttk.Label(self, text = "10")
-        task10.grid(column=1, row=19, sticky=tk.W, padx=0, pady=0)
-    '''
+
     # Adding a Task
     def enter_new_task(self):
         # Name
@@ -316,7 +218,7 @@ class App(tk.Tk):
         task_list.append(self.text_name.get())
         #check box
         task_checkbox = ttk.Checkbutton(self)
-        task_checkbox.grid(column=0, row=len(task_list)+10, sticky=tk.W, padx=0, pady=0)
+        task_checkbox.grid(column=0, row=len(task_list)+10, sticky=tk.W, padx=10, pady=0)
         #task number
         task_num = ttk.Label(self, text = len(task_list))
         task_num.grid(column=1, row=len(task_list)+10, sticky=tk.W, padx=0, pady=0)
@@ -348,57 +250,9 @@ class App(tk.Tk):
         reminder_list.append(self.reminder_item.get())
         reminder_item = ttk.Label(self, text = self.reminder_item.get())
         reminder_item.grid(column=6, row=len(reminder_list)+10, sticky=tk.W, padx=0, pady=0)
-        
-   
-    '''
-    def reminder_list(self, task_name):
-        list_of_reminders  = []
-        list_of_reminders.append(task_name)
-    '''
-    
-    '''
-    def create_task(self, name, due_date, description):
-        
-        #task name
-        task_name = ttk.Label(self, text = name)
-        task_name.grid(column=0, row=7, sticky=tk.W, padx=0, pady=0)
-        
-        #task due date
-        task_due_date = ttk.Label(self, text = due_date)
-        task_due_date.grid(column=1, row=7, sticky=tk.W, padx=0, pady=0)
-        
-        #task description
-        task_description = ttk.Label(self, text = description)
-        task_description.grid(column=1, row=7, sticky=tk.W, padx=0, pady=0)
-    '''
-    
-    '''
-    def list_of_tasks(self, task):
-        task_list = []
-        number_of_tasks = len(task_list)
-
-        '''
-#    self.button['command'] = self.button_clicked
- #   self.button.pack()
-
- # def button_clicked(self):
-  #  showinfo(title='Information', message='Hello, Tkinter!')
-        
+            
             
 if __name__ == "__main__":
     app = App(1200,800)
     app.mainloop()
 
-
-'''
-        # Days of the week
-        password_label = ttk.Label(self, text="Password:")
-        password_label.grid(column=0, row=1, sticky=tk.W, padx=5, pady=5)
-
-        password_entry = ttk.Entry(self,  show="*")
-        password_entry.grid(column=1, row=1, sticky=tk.E, padx=5, pady=5)
-
-        # login button
-        login_button = ttk.Button(self, text="Login")
-        login_button.grid(column=1, row=3, sticky=tk.E, padx=5, pady=5)
-'''
